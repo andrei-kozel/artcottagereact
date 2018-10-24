@@ -11,7 +11,7 @@ class Product extends Component {
   };
 
   render() {
-    const { product, loading } = this.props;
+    const { product, loading, auth } = this.props;
     let productContent;
     if (
       this.props.product === null ||
@@ -22,7 +22,7 @@ class Product extends Component {
         <ReactLoading className="loading" type="bubbles" color="#8dc63f" />
       );
     } else {
-      productContent = <Card product={product} />;
+      productContent = <Card product={product} auth={auth} />;
     }
     return <div>{productContent}</div>;
   }

@@ -67,13 +67,10 @@
 
 .product_image {
   height: 100%;
-  margin-top: 40px;
-  margin-bottom: 80px;
 }
 
 .product_image_container {
   width: 100%;
-  padding: 10px;
   height: 100%;
 }
 .main_pic {
@@ -81,7 +78,7 @@
   width: 100%;
 }
 .pic {
-  margin: 50px 20px;
+  margin: 30px 20px;
   width: 90%;
   height: 446px;
   background-size: cover !important;
@@ -97,7 +94,7 @@
   margin: 4px;
   cursor: pointer;
   height: 120px;
-  width: 30%;
+  width: 31%;
   background-size: cover !important;
   background-position: bottom center !important;
   box-sizing: border-box;
@@ -106,5 +103,37 @@
 }
 
 .product-description {
-  margin: 90px 0;
+  margin: 30px 0;
+}
+
+#details {
+  margin-bottom: 20px;
+}
+
+.desc_item {
+  margin: 8px 0;
+}
+.desc_items {
+  margin-bottom: 30px;
+}
+
+.product_header {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.product_header span {
+  float: right;
+  cursor: pointer;
+  color: $color-dark-blue;
+  margin: 4px;
+  font-size: 22px;
+  a {
+    color: $color-dark-blue;
+  }
+}
+
+.product-wrap {
+  margin-bottom: 50px;
 }

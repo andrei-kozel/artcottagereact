@@ -2,7 +2,8 @@ import {
   ADD_PRODUCT,
   GET_POSTS,
   PRODUCT_LOADING,
-  GET_POST
+  GET_POST,
+  DELETE_PRODUCT
 } from "../actions/types";
 import isEmpty from "../validation/is-empty";
 
@@ -36,6 +37,11 @@ export default function(state = initialState, action) {
         ...state,
         isAuthenticated: !isEmpty(action.payload),
         product: action.payload
+      };
+    case DELETE_PRODUCT:
+      return {
+        ...state,
+        posts: state.products.filter(post => post._id !== action.payload)
       };
     default:
       return state;

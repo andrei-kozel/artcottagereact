@@ -1,6 +1,12 @@
 import axios from "axios";
 
-import { GET_ERRORS, GET_POSTS, PRODUCT_LOADING, GET_POST } from "./types";
+import {
+  GET_ERRORS,
+  GET_POSTS,
+  PRODUCT_LOADING,
+  GET_POST,
+  DELETE_PRODUCT
+} from "./types";
 
 // create new product
 export const createProduct = (productData, history) => dispatch => {
@@ -49,6 +55,24 @@ export const getProduct = id => dispatch => {
       dispatch({
         type: GET_POST,
         payload: null
+      })
+    );
+};
+
+// Delete Product
+export const deleteProduct = id => dispatch => {
+  axios
+    .delete(`/api/products/${id}`)
+    .then(res =>
+      dispatch({
+        type: DELETE_PRODUCT,
+        payload: id
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
       })
     );
 };

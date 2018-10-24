@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 class ProductItem extends Component {
   render() {
-    const { product, auth } = this.props;
+    const { product } = this.props;
 
     return (
       <div className="col-lg-4 col-md-6 col-sm-12">
