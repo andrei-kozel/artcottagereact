@@ -78,7 +78,7 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-  deletePost: PropTypes.func.isRequired
+  deleteProduct: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
