@@ -1,0 +1,54 @@
+.footer {
+  .row {
+    margin: 0;
+  }
+  background-color: $color-grey;
+
+  h4 {
+    font-family: "Merienda One", cursive;
+    margin-bottom: 16px;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    li {
+      text-decoration: none;
+      a {
+        color: inherit;
+      }
+    }
+  }
+
+  &-details {
+    padding: 40px 0;
+    ul {
+      margin-bottom: 16px;
+      li {
+        svg {
+          color: $color-green;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .socials {
+      margin: 16px auto 0;
+      svg {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 40px;
+        padding: 4px;
+        &:hover {
+          color: rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+  }
+
+  &-copyright {
+    text-align: center;
+    padding: 8px 0;
+    background-color: darken($color-grey, 1) !important;
+  }
+}

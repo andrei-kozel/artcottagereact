@@ -1,0 +1,88 @@
+.button {
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 16px;
+
+  &-green {
+    background-color: $color-green;
+  }
+
+  &-orange {
+    background-color: $color-orange;
+  }
+
+  &-blue {
+    background-color: $color-blue;
+  }
+
+  &-yellow {
+    background-color: $color-yellow;
+  }
+
+  &-white {
+    background-color: #fff;
+  }
+}
+
+.button:focus {
+  outline: none;
+}
+
+.link-button {
+  display: inline-block;
+  color: $color-grey;
+  padding: 12px 25px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px #a3a3a1;
+  font-weight: 600;
+  margin-bottom: 20px;
+
+  &:hover {
+    text-decoration: none;
+    color: darken($color-grey, 0.9);
+    &:active {
+      box-shadow: none;
+      transform: translateY(3px);
+    }
+  }
+
+  &__yellow {
+    background-color: $color-yellow;
+    &:hover {
+      background-color: darken($color-yellow, 5);
+    }
+  }
+
+  &__blue {
+    background-color: $color-blue;
+    &:hover {
+      background-color: darken($color-blue, 5);
+    }
+  }
+
+  &__orange {
+    background-color: $color-orange;
+    &:hover {
+      background-color: darken($color-orange, 5);
+    }
+  }
+
+  &__green {
+    background-color: $color-green;
+    &:hover {
+      background-color: darken($color-green, 5);
+    }
+  }
+
+  &__white {
+    background-color: #fff;
+    &:hover {
+      background-color: darken(#fff, 5);
+    }
+  }
+}

@@ -1,0 +1,92 @@
+.carousel {
+  height: 400px;
+
+  img {
+    height: 400px;
+    object-fit: cover;
+  }
+}
+
+.features {
+  background-color: $color-light;
+  padding: 60px 0;
+  text-align: center;
+
+  .circle {
+    padding: 30px;
+    border-radius: 43%;
+    background-color: $color-light;
+    margin-top: 30px;
+  }
+
+  .circle-b {
+    padding: 30px;
+    border-radius: 43%;
+    background-color: $color-light;
+    margin-bottom: 30px;
+  }
+
+  h4 {
+    font-family: "Merienda One", cursive;
+  }
+
+  h5 {
+    color: $color-grey;
+  }
+
+  svg {
+    font-size: 50px;
+  }
+
+  .first {
+    .circle {
+      border-top: solid $color-green 10px;
+    }
+    .circle-b {
+      border-bottom: solid $color-green 10px;
+    }
+    svg {
+      color: $color-green;
+    }
+  }
+
+  .second {
+    .circle {
+      border-top: solid $color-orange 10px;
+    }
+    .circle-b {
+      border-bottom: solid $color-orange 10px;
+    }
+    svg {
+      color: $color-orange;
+    }
+  }
+
+  .third {
+    .circle {
+      border-top: solid $color-blue 10px;
+    }
+    .circle-b {
+      border-bottom: solid $color-blue 10px;
+    }
+    svg {
+      color: $color-blue;
+    }
+  }
+
+  .fourth {
+    .circle {
+      border-top: solid $color-yellow 10px;
+    }
+    .circle-b {
+      border-bottom: solid $color-yellow 10px;
+    }
+    svg {
+      color: $color-yellow;
+    }
+  }
+}
+
+iframe {
+  margin-bottom: -6px;
+}

@@ -1,0 +1,59 @@
+.register {
+  margin: 0 auto;
+  padding: 150px 0;
+
+  h2 {
+    font-family: "Merienda One", cursive;
+  }
+
+  form {
+    position: relative;
+    height: 60%;
+    background-color: $color-grey-light;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #333;
+  }
+}
+
+.relog-wrap {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: -webkit-linear-gradient(
+      left,
+      #8dc63f 0%,
+      #8dc63f 20%,
+      #a364a5 20%,
+      #a364a5 40%,
+      #26a69a 40%,
+      #26a69a 60%,
+      #f06656 60%,
+      #f06656 80%,
+      #ddbd30 80%,
+      #ddbd30 100%
+    );
+    background: -moz-linear-gradient(
+      left,
+      #8dc63f 0%,
+      #8dc63f 20%,
+      #a364a5 20%,
+      #a364a5 40%,
+      #26a69a 40%,
+      #26a69a 60%,
+      #f06656 60%,
+      #f06656 80%,
+      #ddbd30 80%,
+      #ddbd30 100%
+    );
+    height: 5px;
+    border-radius: 5px 5px 0 0;
+  }
+}
+
+.form-wrap {
+  margin: 40px 0;
+}

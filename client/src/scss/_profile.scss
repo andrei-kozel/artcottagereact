@@ -1,0 +1,43 @@
+.profile {
+  margin: 130px 0;
+
+  &-col {
+    height: 200px;
+    padding: 20px;
+  }
+  a {
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    display: block;
+  }
+  a:hover {
+    text-decoration: none;
+    transform: scale(1.03);
+  }
+}
+.prof-col {
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin: 5px;
+  padding: 50px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.prof-one {
+  border: $color-blue solid 2px;
+  background-color: rgba($color-blue, 0.5);
+}
+
+.prof-two {
+  border: $color-yellow solid 2px;
+  background-color: rgba($color-yellow, 0.5);
+}
+
+.prof-three {
+  border: $color-green solid 2px;
+  background-color: rgba($color-green, 0.5);
+}
