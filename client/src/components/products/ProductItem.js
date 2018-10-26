@@ -33,7 +33,11 @@ class ProductItem extends Component {
               <div className="stats-container">
                 <span className="product_name">{product.title}</span>
                 <span className="product_price">
-                  {product.price ? product.price + " SEK" : null}
+                  {product.price === 0 ||
+                  product.price === "" ||
+                  product.price === null
+                    ? null
+                    : product.price + " SEK"}
                 </span>
                 <p>{product.category}</p>
 

@@ -42,6 +42,22 @@ router.post(
   }
 );
 
+// @route   GET api/products/removeimage
+// @desc    Remove image from cloudinary
+// @access  Private
+router.get(
+  "/removeimage",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    let image_id = req.query.public_id;
+
+    cloudinary.uploader.destroy(image_id, (error, result) => {
+      if (error) return res.json({ succes: false, error });
+      res.status(200).send("ok");
+    });
+  }
+);
+
 // @route   GET api/posts
 // @desc    Get posts
 // @access  Public
@@ -125,7 +141,11 @@ router.post(
     if (req.body.description) productFields.description = req.body.description;
     if (req.body.price) productFields.price = req.body.price;
     if (req.body.category) productFields.category = req.body.category;
-    if (req.body.available) productFields.available = req.body.available;
+    if (req.body.available) {
+      productFields.available = req.body.available;
+    } else {
+      productFields.available = false;
+    }
     if (req.body.images) productFields.images = req.body.images;
     if (req.body.likes) productFields.likes = req.body.likes;
     if (req.body.comments) productFields.comments = req.body.comments;

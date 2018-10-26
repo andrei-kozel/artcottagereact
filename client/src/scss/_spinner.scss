@@ -1,0 +1,10 @@
+.loading-wrap {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .loading {
+    margin: 0 auto;
+  }
+}

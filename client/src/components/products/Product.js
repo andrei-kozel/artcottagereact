@@ -19,7 +19,9 @@ class Product extends Component {
       Object.keys(product).length === 0
     ) {
       productContent = (
-        <ReactLoading className="loading" type="bubbles" color="#8dc63f" />
+        <div className="loading-wrap">
+          <ReactLoading className="loading" type="bubbles" color="#8dc63f" />
+        </div>
       );
     } else {
       productContent = <Card product={product} auth={auth} />;

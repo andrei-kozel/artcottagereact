@@ -7,8 +7,12 @@ import PropTypes from "prop-types";
 
 class Card extends Component {
   onDeleteClick(id) {
-    this.props.deleteProduct(id);
-    this.history.push(null, "/products");
+    if (window.confirm("Är du saker?")) {
+      this.props.deleteProduct(id);
+      this.history.push(null, "/products");
+    } else {
+      return false;
+    }
   }
   render() {
     const { product } = this.props;
@@ -33,7 +37,7 @@ class Card extends Component {
                     </Link>
                   </span>
                   <span className="text-secondary">
-                    <Link to="/">
+                    <Link to={`/product/edit/${product._id}`}>
                       <i className="fas fa-edit" />
                     </Link>
                   </span>

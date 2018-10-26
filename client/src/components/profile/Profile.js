@@ -10,7 +10,7 @@ const Profile = () => {
         </Link>
       </div>
       <div className="col-lg-4 col-md-6 col-sm-12 profile-col">
-        <Link className="prof-col prof-two text-dark shadow" to="/products/new">
+        <Link className="prof-col prof-two text-dark shadow" to="/product/new">
           <h4>Lägg till Produkt</h4>
         </Link>
       </div>

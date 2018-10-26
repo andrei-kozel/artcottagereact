@@ -16,7 +16,7 @@ import Login from "./components/auth/Login";
 import Profile from "./components/profile/Profile";
 import AllProducts from "./components/products/AllProducts";
 import Product from "./components/products/Product";
-
+import EditProduct from "./components/edit-product/EditProduct";
 import CreateProduct from "./components/create-product/CreateProduct";
 // style
 import "./scss/main.scss";
@@ -55,12 +55,19 @@ class App extends Component {
               <Switch>
                 <PrivateRoute
                   exact
-                  path="/products/new"
+                  path="/product/new"
                   component={CreateProduct}
                 />
               </Switch>
-              <Route exact path="/products" component={AllProducts} />
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/product/edit/:id"
+                  component={EditProduct}
+                />
+              </Switch>
               <Route exact path="/products/:id" component={Product} />
+              <Route exact path="/products" component={AllProducts} />
             </div>
             <Footer />
           </div>

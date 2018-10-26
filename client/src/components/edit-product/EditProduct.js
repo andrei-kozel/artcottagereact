@@ -8,9 +8,10 @@ import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import SelectListGroup from "../common/SelectListGroup";
 import FileUpload from "../products/FileUpload";
 
-import { createProduct } from "../../actions/productsActions";
+import { editProduct, getProduct } from "../../actions/productsActions";
+import isEmpty from "../../validation/is-empty";
 
-class CreateProduct extends Component {
+class EditProduct extends Component {
   constructor(props) {
     super(props);
 
@@ -30,14 +31,68 @@ class CreateProduct extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.getProduct(this.props.match.params.id);
+
+    this.setState({
+      available: this.props.products.product.available,
+      images: this.props.products.product.images
+    });
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
+      this.setState({
+        errors: nextProps.errors,
+        images: this.props.products.product.images
+      });
     }
+
+    if (nextProps.products.product) {
+      const product = nextProps.products.product;
+
+      product.title = !isEmpty(product.title) ? product.title : "";
+      product.category = !isEmpty(product.category) ? product.category : "";
+      product.technique = !isEmpty(product.technique) ? product.technique : "";
+      product.size = !isEmpty(product.size) ? product.size : "";
+      product.material = !isEmpty(product.material) ? product.material : "";
+      product.description = !isEmpty(product.description)
+        ? product.description
+        : "";
+      product.price = !isEmpty(product.price) ? product.price : 0;
+      product.images = !isEmpty(product.images) ? product.images : [];
+
+      this.setState({
+        title: product.title,
+        category: product.category,
+        technique: product.technique,
+        size: product.size,
+        material: product.material,
+        description: product.description,
+        price: product.price,
+        images: product.images
+      });
+    }
+  }
+
+  removeDuplicates(originalArray, prop) {
+    var newArray = [];
+    var lookupObject = {};
+
+    for (var i in originalArray) {
+      lookupObject[originalArray[i][prop]] = originalArray[i];
+    }
+
+    for (i in lookupObject) {
+      newArray.push(lookupObject[i]);
+    }
+    return newArray;
   }
 
   onSubmit = e => {
     e.preventDefault();
+    let uniqueArray = this.state.images;
+    uniqueArray = this.removeDuplicates(this.state.images, "public_id");
 
     const productData = {
       title: this.state.title,
@@ -48,13 +103,17 @@ class CreateProduct extends Component {
       description: this.state.description,
       price: this.state.price,
       available: this.state.available,
-      images: this.state.images,
+      images: uniqueArray,
       likes: this.state.likes,
       comments: this.state.comments,
       errors: this.state.errors
     };
 
-    this.props.createProduct(productData, this.props.history);
+    this.props.editProduct(
+      this.props.match.params.id,
+      productData,
+      this.props.history
+    );
   };
 
   onChange = e => {
@@ -75,7 +134,6 @@ class CreateProduct extends Component {
 
   render() {
     const { errors } = this.state;
-
     const categories = [
       { label: "Välj kategori", value: 0 },
       { label: "Tallrik", value: "Tallrik" },
@@ -87,11 +145,12 @@ class CreateProduct extends Component {
     return (
       <div className="product shadow col-lg-9 col-md-10 col-sm-12">
         <div className="relog-wrap ">
-          <h2 className="text-dark">Lägg till Produkt</h2>
+          <h2 className="text-dark">Ändra Produkt</h2>
           <FileUpload
             imagesHandler={images => {
               this.imagesHandler(images);
             }}
+            images={this.props.products.product.images}
           />
           <div className="row">
             <div className="col-lg-10 col-md-10 col-sm-12 add-form">
@@ -158,6 +217,7 @@ class CreateProduct extends Component {
                     />
                     <div className="form-check">
                       <input
+                        defaultChecked={this.state.available}
                         name="available"
                         type="checkbox"
                         className="form-check-input"
@@ -186,15 +246,18 @@ class CreateProduct extends Component {
   }
 }
 
-CreateProduct.propTypes = {
-  errors: PropTypes.object
+EditProduct.propTypes = {
+  errors: PropTypes.object,
+  getProduct: PropTypes.func.isRequired,
+  editProduct: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
+  products: state.products,
   errors: state.errors
 });
 
 export default connect(
   mapStateToProps,
-  { createProduct }
-)(withRouter(CreateProduct));
+  { editProduct, getProduct }
+)(withRouter(EditProduct));

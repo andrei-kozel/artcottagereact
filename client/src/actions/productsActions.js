@@ -21,6 +21,19 @@ export const createProduct = (productData, history) => dispatch => {
     );
 };
 
+// edit  product
+export const editProduct = (id, productData, history) => dispatch => {
+  axios
+    .post(`/api/products/${id}`, productData)
+    .then(res => history.push(`/products/${id}`))
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
 //  show all products
 export const showAllProducts = () => dispatch => {
   dispatch(setProductLoading());

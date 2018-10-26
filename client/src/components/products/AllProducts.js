@@ -23,7 +23,9 @@ class AllProducts extends Component {
     let productsContent;
     if (products === null || loading) {
       productsContent = (
-        <ReactLoading className="loading" type="bubbles" color="#8dc63f" />
+        <div className="loading-wrap">
+          <ReactLoading className="loading" type="bubbles" color="#8dc63f" />
+        </div>
       );
     } else {
       productsContent = <ProductFeed products={products} />;
