@@ -7,3 +7,8 @@ export const DELETE_PRODUCT = "DELETE_PRODUCT";
 export const GET_POSTS = "GET_POSTS";
 export const GET_POST = "GET_POST";
 export const PRODUCT_LOADING = "PRODUCT_LOADING";
+
+export const GET_PLATES = "GET_PLATES";
+export const GET_DEKOR = "GET_DEKOR";
+export const GET_CANDLE = "GET_CANDLE";
+export const GET_OTHER = "GET_OTHER";

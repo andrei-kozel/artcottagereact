@@ -5,7 +5,11 @@ import {
   GET_POSTS,
   PRODUCT_LOADING,
   GET_POST,
-  DELETE_PRODUCT
+  DELETE_PRODUCT,
+  GET_PLATES,
+  GET_DEKOR,
+  GET_CANDLE,
+  GET_OTHER
 } from "./types";
 
 // create new product
@@ -94,4 +98,82 @@ export const setProductLoading = () => {
   return {
     type: PRODUCT_LOADING
   };
+};
+
+// filters
+
+// plates
+export const showPlates = () => dispatch => {
+  dispatch(setProductLoading());
+  axios
+    .get("/api/products/")
+    .then(res =>
+      dispatch({
+        type: GET_PLATES,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_PLATES,
+        payload: null
+      })
+    );
+};
+
+// candle holder
+export const showCandle = () => dispatch => {
+  dispatch(setProductLoading());
+  axios
+    .get("/api/products/")
+    .then(res =>
+      dispatch({
+        type: GET_CANDLE,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_CANDLE,
+        payload: null
+      })
+    );
+};
+
+// dekor
+export const showDekor = () => dispatch => {
+  dispatch(setProductLoading());
+  axios
+    .get("/api/products/")
+    .then(res =>
+      dispatch({
+        type: GET_DEKOR,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_DEKOR,
+        payload: null
+      })
+    );
+};
+
+// other
+export const showOther = () => dispatch => {
+  dispatch(setProductLoading());
+  axios
+    .get("/api/products/")
+    .then(res =>
+      dispatch({
+        type: GET_OTHER,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_OTHER,
+        payload: null
+      })
+    );
 };
