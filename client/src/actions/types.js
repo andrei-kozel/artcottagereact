@@ -12,3 +12,6 @@ export const GET_PLATES = "GET_PLATES";
 export const GET_DEKOR = "GET_DEKOR";
 export const GET_CANDLE = "GET_CANDLE";
 export const GET_OTHER = "GET_OTHER";
+
+export const GET_EVENT = "GET_EVENT";
+export const POST_EVENT = "POST_EVENT";

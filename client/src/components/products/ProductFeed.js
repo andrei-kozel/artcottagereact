@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import ProductItem from "./ProductItem";
 
 class ProductFeed extends Component {
@@ -11,9 +10,5 @@ class ProductFeed extends Component {
     ));
   }
 }
-
-ProductFeed.propTypes = {
-  products: PropTypes.array.isRequired
-};
 
 export default ProductFeed;

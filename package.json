@@ -7,7 +7,8 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "license": "MIT",
   "dependencies": {
@@ -15,13 +16,14 @@
     "body-parser": "^1.18.3",
     "cloudinary": "^1.11.0",
     "concurrently": "^4.0.1",
+    "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "express-formidable": "^1.0.0",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.3.4",
+    "nodemailer": "^4.6.8",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "react-infinite-scroll-component": "^4.2.0",
     "react-loading": "^2.0.3",
     "validator": "^10.8.0"
   }

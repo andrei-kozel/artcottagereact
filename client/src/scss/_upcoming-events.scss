@@ -1,0 +1,35 @@
+.upcoming_events_wrap {
+  background-color: $color-light;
+  padding-top: 120px;
+  padding-bottom: 150px;
+
+  &--header {
+    font-family: "Merienda One", cursive;
+    color: $color-grey;
+    text-align: center;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  &--details {
+    padding-top: 60px;
+
+    h5 {
+      margin: 16px 0;
+    }
+  }
+
+  &--img {
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    margin: 30px 0;
+    background-image: url(https://images.pexels.com/photos/673648/pexels-photo-673648.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

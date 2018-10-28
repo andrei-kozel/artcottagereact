@@ -16,9 +16,7 @@ class AllProducts extends Component {
   state = {
     products: [],
     product: {},
-    loading: false,
-    currentPage: 1,
-    todosPerPage: 3
+    loading: false
   };
 
   componentDidMount = () => {

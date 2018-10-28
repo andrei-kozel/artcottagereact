@@ -35,7 +35,7 @@ export default function Footer() {
               </li>
             </ul>
             <div className="row socials">
-              <a href="/">
+              <a href="https://www.instagram.com/artcottage_/">
                 <i className="fab fa-instagram" />
               </a>
               <a href="/">

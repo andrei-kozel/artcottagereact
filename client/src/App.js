@@ -18,6 +18,9 @@ import AllProducts from "./components/products/AllProducts";
 import Product from "./components/products/Product";
 import EditProduct from "./components/edit-product/EditProduct";
 import CreateProduct from "./components/create-product/CreateProduct";
+import EditEvent from "./components/event/EditEvent";
+import Contacts from "./components/contact/Contacts";
+
 // style
 import "./scss/main.scss";
 
@@ -44,6 +47,8 @@ class App extends Component {
           <div className="App">
             <Navbar />
             <Route exact path="/" component={Landing} />
+            <Route exact path="/contacts" component={Contacts} />
+
             <div className="container">
               <Switch>
                 <PrivateRoute exact path="/register" component={Register} />
@@ -52,6 +57,7 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/profile" component={Profile} />
               </Switch>
+
               <Switch>
                 <PrivateRoute
                   exact
@@ -65,6 +71,9 @@ class App extends Component {
                   path="/product/edit/:id"
                   component={EditProduct}
                 />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/event/:id" component={EditEvent} />
               </Switch>
               <Route exact path="/products/:id" component={Product} />
               <Route exact path="/products" component={AllProducts} />

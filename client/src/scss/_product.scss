@@ -139,7 +139,11 @@
 }
 
 .last-product-wrap {
-  padding-bottom: 90px;
+  padding-bottom: 60px;
+  .link {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .filter-wrap {

@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const mongoose = require("mongoose");
 const passport = require("passport");
 const cloudinary = require("cloudinary");
 const formidable = require("express-formidable");
@@ -13,7 +12,7 @@ const Product = require("../../models/Product");
 const validateProductInput = require("../../validation/product");
 
 cloudinary.config({
-  cloud_name: keys.cloudname,
+  cloud_name: "dbbydqfht",
   api_key: "124555923956956",
   api_secret: "Jn3h5_Jex7R7_ruYC6hjQgetdZ4"
 });

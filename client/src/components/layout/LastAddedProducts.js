@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { showAllProducts } from "../../actions/productsActions";
 import ProductItem from "../../components/products/ProductItem.js";
+import { Link } from "react-router-dom";
 
 class LastAddedProducts extends Component {
   state = {
@@ -25,7 +26,7 @@ class LastAddedProducts extends Component {
     const { products } = this.state;
 
     return (
-      <div className="container">
+      <div className="container last-product-wrap">
         <div className="last-product-wrap">
           <div className="row">
             <div className="text-header">
@@ -37,6 +38,11 @@ class LastAddedProducts extends Component {
               <ProductItem key={prod._id} product={prod} />
             ))}
           </div>
+        </div>
+        <div className="link">
+          <Link to="/products" className="link-button link-button__green">
+            Visa mer
+          </Link>
         </div>
       </div>
     );

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import LastAddedProducts from "./LastAddedProducts";
+import UpcomingEvents from "./UpcomingEvents";
 
 export default function Landing() {
   return (
@@ -103,6 +104,7 @@ export default function Landing() {
       </div>
 
       <LastAddedProducts />
+      <UpcomingEvents />
 
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2152.031899217153!2d12.0761752159935!3d57.35849428101312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464fdc954f50f0d3%3A0x7d6ee1896c3da78!2sG%C3%A5rda+Brygga+Strandv%C3%A4g+36%2C+439+52+%C3%85sa!5e0!3m2!1sru!2sse!4v1536952367739"
